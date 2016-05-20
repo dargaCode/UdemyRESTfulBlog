@@ -11,8 +11,8 @@ const mongoose = require('mongoose');
 
 // CONSTANTS
 
-const DEFUALT_PORT = 3000;
-const PORT = process.env.PORT || DEFUALT_PORT;
+const DEFAULT_PORT = 3000;
+const PORT = process.env.PORT || DEFAULT_PORT;
 const SERVER_MSG = 'REST-ful Blog now running on port ' + PORT;
 
 // SETTINGS
