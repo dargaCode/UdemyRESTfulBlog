@@ -5,8 +5,8 @@
 
 const express = require('express');
 const app = express();
-const ejs = require('ejs');
 const bodyParser = require('body-parser');
+const ejs = require('ejs');
 const mongoose = require('mongoose');
 
 // CONSTANTS
@@ -19,6 +19,7 @@ const SERVER_MSG = 'REST-ful Blog now running on port ' + PORT;
 
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
+app.use(bodyParser.urlencoded({extended: true}));
 ejs.delimiter = '?';
 
 // VARIABLES
