@@ -44,7 +44,17 @@ app.listen(PORT, function() {
 // ROUTES
 
 app.get('/', function(req, res) {
-  res.send('REST-ful Blog App Root Route!');
+  res.redirect('/blogs');
+});
+
+app.get('/blogs', function(req, res) {
+  Blog.find({}, function(err, blogs) {
+    if (err) {
+      console.log('ERROR:', error);
+    } else {
+      res.render('index', {blogs: blogs});
+    }
+  });
 });
 
 // FUNCTIONS
