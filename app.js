@@ -50,7 +50,7 @@ app.get('/', function(req, res) {
 app.get('/blogs', function(req, res) {
   Blog.find({}, function(err, blogs) {
     if (err) {
-      console.log('ERROR:', error);
+      console.log('ERROR:', err);
     } else {
       res.render('index', {blogs: blogs});
     }
