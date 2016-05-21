@@ -19,7 +19,7 @@ const DEFAULT_MONGO_URL = 'mongodb://localhost/restful_blog';
 const MONGO_URL = process.env.MONGO_URL || DEFAULT_MONGO_URL;
 const blogSchema = new mongoose.Schema({
   title: String,
-  image: String,
+  imageUrl: String,
   body: String,
   created: {type: Date, default: Date.now}
 });
