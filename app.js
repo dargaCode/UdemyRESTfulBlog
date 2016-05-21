@@ -64,6 +64,18 @@ app.get('/blogs/new', function(req, res) {
 });
 
   // create route
+app.post('/blogs', function(req, res) {
+  const requestedBlog  = req.body.blog;
+
+  Blog.create(requestedBlog, function(err, createdBlog) {
+    if (err) {
+      res.render('new');
+    } else {
+      res.redirect('/blogs');
+    }
+  });
+
+});
 
   // show route
 
