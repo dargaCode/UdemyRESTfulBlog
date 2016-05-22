@@ -104,6 +104,18 @@ app.get('/blogs/:id/edit', function(req, res) {
 });
 
   // update route
+app.put('/blogs/:id', function(req, res) {
+  const id = req.params.id;
+  const requestedBlog = req.body.blog;
+  Blog.findByIdAndUpdate(id, requestedBlog, function(err, updatedBlog) {
+    if (err) {
+      console.log('ERROR:', err);
+      res.redirect('/blogs');
+    } else {
+      res.redirect('/blogs/' + id);
+    }
+  });
+});
 
   // destroy route
 
