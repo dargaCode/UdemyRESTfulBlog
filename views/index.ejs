@@ -7,9 +7,9 @@
   <div>
     <h2> <?= blog.title ?> </h2>
     <img src=" <?= blog.imageUrl ?> ">
-    <span> <?= blog.created ?> </span>
-    <p> <?= blog.body ?> </p>
-    <a href="/blogs/<?= blog._id ?>">Read More</a>
+    <p> <?= blog.created.toDateString() ?> </p>
+    <p> <?- blog.body.substring(0,250) ?>... </p>
+    <a href="/blogs/<?= blog._id ?>" class="ui tiny button">Read More</a>
   </div>
 <? }); ?>
 

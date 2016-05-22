@@ -9,3 +9,7 @@ i.icon {
 .container.main {
   margin-top: 7.0em;
 }
+
+img {
+  max-width: 500px;
+}
