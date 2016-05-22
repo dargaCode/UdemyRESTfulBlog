@@ -1,3 +1,6 @@
+html {
+  height: inherit;
+}
 
 i.icon {
   font-size: 2em;
