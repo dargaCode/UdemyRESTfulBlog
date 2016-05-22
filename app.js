@@ -9,6 +9,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const ejs = require('ejs');
 const mongoose = require('mongoose');
+const methodOverride = require('method-override');
 
 // CONSTANTS
 
@@ -30,6 +31,7 @@ const Blog = mongoose.model('blog', blogSchema);
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended: true}));
+app.use(methodOverride('_method'));
 ejs.delimiter = '?';
 mongoose.connect(MONGO_URL);
 

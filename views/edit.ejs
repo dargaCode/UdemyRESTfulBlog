@@ -6,7 +6,7 @@
     Edit Post - "<?= blog.title ?>"
   </div>
 
-  <form action="TBD" method="TBD" class="ui form">
+  <form action="/blogs/<?= blog._id ?>?_method=PUT" method="POST" class="ui form">
 
     <div class="field">
       <label>Title</label>
