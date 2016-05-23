@@ -123,6 +123,16 @@ app.put('/blogs/:id', function(req, res) {
 });
 
   // destroy route
+app.delete('/blogs/:id/', function(req, res){
+  const id = req.params.id;
+
+  Blog.findByIdAndRemove(id, function(err) {
+    if(err) {
+      console.log('ERROR:', err);
+    }
+    res.redirect('/blogs');
+  });
+});
 
 // FUNCTIONS
 

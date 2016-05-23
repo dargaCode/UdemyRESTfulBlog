@@ -13,3 +13,7 @@ i.icon {
 img {
   max-width: 500px;
 }
+
+#delete {
+  display: inline;
+}
