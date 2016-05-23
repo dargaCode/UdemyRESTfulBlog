@@ -9,10 +9,6 @@ html {
   margin-top: 7.0em;
 }
 
-i.icon {
-  font-size: 0.8em;
-}
-
 /* HEADER */
 
 .menu .header i.icon {
@@ -20,6 +16,10 @@ i.icon {
 }
 
 /* INDEX */
+
+i.icon.chevron {
+  font-size: 0.8em;
+}
 
 .content .header a {
   color: black;
