@@ -7,9 +7,11 @@ const pjson = require('./package.json');
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
+const expressSanitizer = require('express-sanitizer');
 const ejs = require('ejs');
 const mongoose = require('mongoose');
 const methodOverride = require('method-override');
+
 
 // CONSTANTS
 
@@ -31,6 +33,7 @@ const Blog = mongoose.model('blog', blogSchema);
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended: true}));
+app.use(expressSanitizer());
 app.use(methodOverride('_method'));
 ejs.delimiter = '?';
 mongoose.connect(MONGO_URL);
@@ -68,6 +71,7 @@ app.get('/blogs/new', function(req, res) {
   // create route
 app.post('/blogs', function(req, res) {
   const requestedBlog  = req.body.blog;
+  requestedBlog.body = req.sanitize(requestedBlog.body);
 
   Blog.create(requestedBlog, function(err, createdBlog) {
     if (err) {
@@ -111,6 +115,7 @@ app.get('/blogs/:id/edit', function(req, res) {
 app.put('/blogs/:id', function(req, res) {
   const id = req.params.id;
   const requestedBlog = req.body.blog;
+  requestedBlog.body = req.sanitize(requestedBlog.body);
 
   Blog.findByIdAndUpdate(id, requestedBlog, function(err, updatedBlog) {
     if (err) {
