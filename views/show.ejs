@@ -20,10 +20,10 @@
         <p><?- blog.body ?></p>
       </div>
 
-      <a class="ui green button" href="/blogs/<?= blog.id ?>/edit">Edit</a>
+      <a class="ui black button" href="/blogs/<?= blog.id ?>/edit">Edit</a>
 
       <form id="delete" action="/blogs/<?= blog._id ?>?_method=DELETE" method="POST">
-        <button class="ui red button">Delete</button>
+        <button class="ui red basic button">Delete</button>
       </form>
 
     </div>
