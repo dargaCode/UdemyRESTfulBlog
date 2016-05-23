@@ -81,7 +81,9 @@ app.post('/blogs', function(req, res) {
 
   // show route
 app.get('/blogs/:id', function(req, res) {
-  Blog.findById(req.params.id, function(err, foundBlog) {
+  const id = req.params.id;
+
+  Blog.findById(id, function(err, foundBlog) {
     if(err) {
       console.log('ERROR:', err);
       res.redirect('/blogs');
@@ -93,7 +95,9 @@ app.get('/blogs/:id', function(req, res) {
 
   // edit route
 app.get('/blogs/:id/edit', function(req, res) {
-  Blog.findById(req.params.id, function(err, foundBlog) {
+  const id = req.params.id;
+
+  Blog.findById(id, function(err, foundBlog) {
     if(err) {
       console.log('ERROR', err);
       res.redirect('/blogs');
@@ -107,6 +111,7 @@ app.get('/blogs/:id/edit', function(req, res) {
 app.put('/blogs/:id', function(req, res) {
   const id = req.params.id;
   const requestedBlog = req.body.blog;
+
   Blog.findByIdAndUpdate(id, requestedBlog, function(err, updatedBlog) {
     if (err) {
       console.log('ERROR:', err);
