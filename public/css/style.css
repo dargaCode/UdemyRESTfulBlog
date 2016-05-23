@@ -1,18 +1,35 @@
+
+/* GLOBAL */
+
 html {
   height: inherit;
-}
-
-i.icon {
-  font-size: 2em;
 }
 
 .container.main {
   margin-top: 7.0em;
 }
 
-img {
-  max-width: 500px;
+i.icon {
+  font-size: 0.8em;
 }
+
+/* HEADER */
+
+.menu .header i.icon {
+  font-size: 1.8em;
+}
+
+/* INDEX */
+
+.content .header a {
+  color: black;
+}
+
+.content .header a:hover {
+  text-decoration: underline;
+}
+
+/* SHOW */
 
 #delete {
   display: inline;

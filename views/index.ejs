@@ -1,16 +1,57 @@
 
 <? include ./partials/header ?>
 
-<h1> Blog Post Index </h1>
+<div class="ui main text container">
 
-<? blogs.forEach(function(blog) { ?>
-  <div>
-    <h2> <?= blog.title ?> </h2>
-    <img src=" <?= blog.imageUrl ?> ">
-    <p> <?= blog.created.toDateString() ?> </p>
-    <p> <?- blog.body.substring(0,250) ?>... </p>
-    <a href="/blogs/<?= blog._id ?>" class="ui tiny button">Read More</a>
+  <div class="ui huge header">
+    All Blog Posts
   </div>
-<? }); ?>
+
+  <div class="ui segment">
+    <div class="ui divided items">
+
+      <? blogs.forEach(function(blog) { ?>
+        <div class="item">
+
+          <div class="image">
+            <img src=" <?= blog.imageUrl ?> ">
+          </div>
+
+          <div class="content">
+
+            <div class="header">
+              <a href="/blogs/<?= blog._id ?>">
+                <?= blog.title ?>
+              </a>
+            </div>
+
+            <div class="meta">
+              <span>
+                <?= blog.created.toDateString() ?>
+              </span>
+            </div>
+
+            <div class="description">
+              <p>
+                <?- blog.body.substring(0,250) ?>...
+              </p>
+            </div>
+
+            <div class="extra">
+              <a class="ui small black button" href="/blogs/<?= blog._id ?>">
+                Read More
+                <i class="right chevron icon"></i>
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+      <? }); ?>
+
+    </div>
+  </div>
+
+</div>
 
 <? include ./partials/footer ?>
