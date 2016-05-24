@@ -1,6 +1,8 @@
 
 <? include ./partials/header ?>
 
+<? const postUrl = '/blogs/' + blog._id; ?>
+
 <div class="ui main text container">
 
   <div class="ui huge header">
@@ -20,12 +22,12 @@
         <p><?- blog.body ?></p>
       </div>
 
-      <a class="ui black icon button" href="/blogs/<?= blog.id ?>/edit">
+      <a class="ui black icon button" href="<?= postUrl ?>/edit">
         Edit
         <i class="write icon right"></i>
       </a>
 
-      <form id="delete" action="/blogs/<?= blog._id ?>?_method=DELETE" method="POST">
+      <form id="delete" action="<?= postUrl ?>?_method=DELETE" method="POST">
         <button class="ui red basic icon button">
           Delete
           <i class="bomb icon right"></i>

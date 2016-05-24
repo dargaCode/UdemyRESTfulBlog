@@ -1,12 +1,14 @@
 
 <? include ./partials/header ?>
 
+<? const postUrl = '/blogs/' + blog._id; ?>
+
 <div class="ui main text container segment">
   <div class="ui huge header">
     Edit Post - "<?= blog.title ?>"
   </div>
 
-  <form action="/blogs/<?= blog._id ?>?_method=PUT" method="POST" class="ui form">
+  <form action="<?= postUrl ?>?_method=PUT" method="POST" class="ui form">
 
     <div class="field">
       <label>Title</label>
@@ -26,7 +28,7 @@
       <i class="send icon right"></i>
     </button>
 
-    <a href="/blogs/<?= blog.id ?>" class="ui red basic icon button">
+    <a href="<?= postUrl ?>" class="ui red basic icon button">
       Cancel
       <i class="remove icon right"></i>
     </a>

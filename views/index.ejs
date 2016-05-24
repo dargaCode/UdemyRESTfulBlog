@@ -11,6 +11,9 @@
     <div class="ui divided items">
 
       <? blogs.forEach(function(blog) { ?>
+
+        <? const postUrl = '/blogs/' + blog._id; ?>
+
         <div class="item">
 
           <div class="image">
@@ -20,7 +23,7 @@
           <div class="content">
 
             <div class="header">
-              <a href="/blogs/<?= blog._id ?>">
+              <a href="<?= postUrl ?>">
                 <?= blog.title ?>
               </a>
             </div>
@@ -38,7 +41,7 @@
             </div>
 
             <div class="extra">
-              <a class="ui small black icon button" href="/blogs/<?= blog._id ?>">
+              <a class="ui small black icon button" href="<?= postUrl ?>">
                 Read More
                 <i class="right chevron icon"></i>
               </a>
