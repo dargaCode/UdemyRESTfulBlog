@@ -36,7 +36,11 @@
 
             <div class="description">
               <p>
-                <?- blog.body.substring(0,250) ?>...
+                <? if(blog.body.length > 250) { ?>
+                  <?- blog.body.substring(0,250) ?>...
+                <? } else { ?>
+                  <?- blog.body ?>
+                <? }; ?>
               </p>
             </div>
 
