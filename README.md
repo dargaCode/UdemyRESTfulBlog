@@ -7,7 +7,7 @@ Used [method-override](https://www.npmjs.com/package/method-override) to enable 
 
 Also used [express-sanitizer](https://www.npmjs.com/package/express-sanitizer) to allow HTML blog posts, but strip out &lt;script&gt; tags. 
 
-Finally, used [Semantic UI](http://semantic-ui.com/) CSS framework for the majority of styling. I like it MUCH better than Bootstrap. As you can tell from the name, it tries to actually be samantic, and uses class names that are much more intuitive.
+Finally, used [Semantic UI](http://semantic-ui.com/) CSS framework for the majority of styling. I like it MUCH better than Bootstrap. As you can tell from the name, it tries to actually be semantic, and uses class names that are much more intuitive.
 
 <a href="http://darga-restful-blog.herokuapp.com/"><b>Live Webpage</b></a>
 
