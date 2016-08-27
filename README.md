@@ -13,4 +13,4 @@ This project still doesn't require a user to be logged in, so anybody can write 
 
 <a href="http://darga-restful-blog.herokuapp.com/"><b>Live Webpage</b></a>
 
-<img src ="http://66.media.tumblr.com/24290ec60a5647e3d0dc73fa0ababe9a/tumblr_inline_o7nq51v60C1tvc5hi_1280.png" width=“500" height="500">
+<img src ="http://66.media.tumblr.com/24290ec60a5647e3d0dc73fa0ababe9a/tumblr_inline_o7nq51v60C1tvc5hi_1280.png" width="600">
